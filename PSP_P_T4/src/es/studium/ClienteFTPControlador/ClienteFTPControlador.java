@@ -13,7 +13,6 @@ import javax.swing.event.ListSelectionListener;
 
 import org.apache.commons.net.PrintCommandListener;
 import org.apache.commons.net.ftp.FTPClient;
-import org.apache.commons.net.ftp.FTPFile;
 
 import es.studium.ClienteFTPModelo.Modelo;
 import es.studium.ClienteFTPVista.ClienteFTPVista;
