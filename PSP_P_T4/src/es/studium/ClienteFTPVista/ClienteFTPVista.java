@@ -21,20 +21,21 @@ public class ClienteFTPVista extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	// Lista para los datos del directorio
-	JList<String> listaDirec = new JList<String>();
-	JButton btnUpFile;
-	JButton btnRenameFile;
-	JButton btnDownloadFile;
-	JButton btnDeleteFile;
-	JButton btnCreateDir;
-	JButton btnDeleteDir;
-	JButton btnRenameDir;
-	JButton btnSalir;
-	JLabel lblVarServer;
-	JLabel lblVarUser;
-	JLabel lblVarRaiz;
-	JLabel lblVarDirActual;
-	JLabel lblMensajeVar;
+	private JList<String> listaDirec = new JList<String>();
+	private JButton btnUpFile;
+	private JButton btnRenameFile;
+	private JButton btnDownloadFile;
+	private JButton btnDeleteFile;
+	private JButton btnCreateDir;
+
+	private JButton btnDeleteDir;
+	private JButton btnRenameDir;
+	private JButton btnSalir;
+	private JLabel lblVarServer;
+	private JLabel lblVarUser;
+	private JLabel lblVarRaiz;
+	private JLabel lblVarDirActual;
+	private JLabel lblMensajeVar;
 
 	public ClienteFTPVista() {
 		setTitle("ClienteFTP");
@@ -162,8 +163,59 @@ public class ClienteFTPVista extends JFrame {
 
 	}
 	
-	public static void main(String[] args) {
-		
-		new ClienteFTPVista().setVisible(true);
+	public JList<String> getListaDirec() {
+		return listaDirec;
+	}
+
+	public JButton getBtnUpFile() {
+		return btnUpFile;
+	}
+
+	public JButton getBtnRenameFile() {
+		return btnRenameFile;
+	}
+
+	public JButton getBtnDownloadFile() {
+		return btnDownloadFile;
+	}
+
+	public JButton getBtnDeleteFile() {
+		return btnDeleteFile;
+	}
+
+	public JButton getBtnCreateDir() {
+		return btnCreateDir;
+	}
+
+	public JButton getBtnDeleteDir() {
+		return btnDeleteDir;
+	}
+
+	public JButton getBtnRenameDir() {
+		return btnRenameDir;
+	}
+
+	public JButton getBtnSalir() {
+		return btnSalir;
+	}
+
+	public JLabel getLblVarServer() {
+		return lblVarServer;
+	}
+
+	public JLabel getLblVarUser() {
+		return lblVarUser;
+	}
+
+	public JLabel getLblVarRaiz() {
+		return lblVarRaiz;
+	}
+
+	public JLabel getLblVarDirActual() {
+		return lblVarDirActual;
+	}
+
+	public JLabel getLblMensajeVar() {
+		return lblMensajeVar;
 	}
 }
