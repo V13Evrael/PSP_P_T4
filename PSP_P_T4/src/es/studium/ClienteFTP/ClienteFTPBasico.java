@@ -60,7 +60,7 @@ public class ClienteFTPBasico extends JFrame
 	static FTPClient cliente = new FTPClient();// cliente FTP
 	String servidor = "127.0.0.1";
 	String user = "jmplatero";
-	String pasw = "Studium2019;";
+	String pasw = "Studium2018;";
 	boolean login;
 	static String direcInicial = "/";
 	// para saber el directorio y fichero seleccionado
@@ -139,27 +139,7 @@ public class ClienteFTPBasico extends JFrame
 				}
 			}
 		});
-		listaDirec.addKeyListener(new KeyListener() {
 
-			@Override
-			public void keyTyped(KeyEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void keyPressed(KeyEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void keyReleased(KeyEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-		});
 		botonSalir.addActionListener(new ActionListener() 
 		{
 			@Override
