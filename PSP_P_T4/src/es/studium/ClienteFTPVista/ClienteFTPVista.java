@@ -36,6 +36,7 @@ public class ClienteFTPVista extends JFrame {
 	private JLabel lblVarRaiz;
 	private JLabel lblVarDirActual;
 	private JLabel lblMensajeVar;
+	private JButton btnGoBack;
 
 	public ClienteFTPVista() {
 		setTitle("ClienteFTP");
@@ -53,6 +54,14 @@ public class ClienteFTPVista extends JFrame {
 		barraDesplazamiento.setBorder(bordeGrid);
 		contentPane.add(barraDesplazamiento, BorderLayout.CENTER);
 		
+		JPanel panel_3 = new JPanel();
+		contentPane.add(panel_3, BorderLayout.SOUTH);
+		panel_3.setLayout(new BorderLayout(0, 0));
+		
+		btnGoBack = new JButton("Atr\u00E1s");
+		btnGoBack.setHorizontalAlignment(SwingConstants.LEFT);
+		panel_3.add(btnGoBack, BorderLayout.WEST);
+		
 		JPanel pnlDerecha = new JPanel();
 		contentPane.add(pnlDerecha, BorderLayout.EAST);
 		pnlDerecha.setLayout(new BorderLayout(0, 0));
@@ -67,11 +76,11 @@ public class ClienteFTPVista extends JFrame {
 		pnlBtn.setBorder(bordeGrid);
 		pnlDerTop.add(pnlBtn);
 		
-		btnRenameFile = new JButton("Renombrar fichero");
-		JPanel pnlBtn1 = new JPanel(new BorderLayout());
-		pnlBtn1.add(btnRenameFile);
-		pnlBtn1.setBorder(bordeGrid);
-		pnlDerTop.add(pnlBtn1);
+		btnCreateDir = new JButton("Crear carpeta");
+		JPanel pnlBtn4 = new JPanel(new BorderLayout());
+		pnlBtn4.add(btnCreateDir);
+		pnlBtn4.setBorder(bordeGrid);
+		pnlDerTop.add(pnlBtn4);
 		
 		btnDownloadFile = new JButton("Descargar fichero");
 		JPanel pnlBtn2 = new JPanel(new BorderLayout());
@@ -79,17 +88,17 @@ public class ClienteFTPVista extends JFrame {
 		pnlBtn2.setBorder(bordeGrid);
 		pnlDerTop.add(pnlBtn2);
 		
-		btnDeleteFile = new JButton("Eliminar fichero");
-		JPanel pnlBtn3 = new JPanel(new BorderLayout());
-		pnlBtn3.add(btnDeleteFile);
-		pnlBtn3.setBorder(bordeGrid);
-		pnlDerTop.add(pnlBtn3);
+		btnRenameDir = new JButton("Renombrar carpeta");
+		JPanel pnlBtn6 = new JPanel(new BorderLayout());
+		pnlBtn6.add(btnRenameDir);
+		pnlBtn6.setBorder(bordeGrid);
+		pnlDerTop.add(pnlBtn6);
 		
-		btnCreateDir = new JButton("Crear carpeta");
-		JPanel pnlBtn4 = new JPanel(new BorderLayout());
-		pnlBtn4.add(btnCreateDir);
-		pnlBtn4.setBorder(bordeGrid);
-		pnlDerTop.add(pnlBtn4);
+		btnRenameFile = new JButton("Renombrar fichero");
+		JPanel pnlBtn1 = new JPanel(new BorderLayout());
+		pnlBtn1.add(btnRenameFile);
+		pnlBtn1.setBorder(bordeGrid);
+		pnlDerTop.add(pnlBtn1);
 		
 		btnDeleteDir = new JButton("Eliminar carpeta");
 		JPanel pnlBtn5 = new JPanel(new BorderLayout());
@@ -97,11 +106,11 @@ public class ClienteFTPVista extends JFrame {
 		pnlBtn5.setBorder(bordeGrid);
 		pnlDerTop.add(pnlBtn5);
 		
-		btnRenameDir = new JButton("Renombrar carpeta");
-		JPanel pnlBtn6 = new JPanel(new BorderLayout());
-		pnlBtn6.add(btnRenameDir);
-		pnlBtn6.setBorder(bordeGrid);
-		pnlDerTop.add(pnlBtn6);
+		btnDeleteFile = new JButton("Eliminar fichero");
+		JPanel pnlBtn3 = new JPanel(new BorderLayout());
+		pnlBtn3.add(btnDeleteFile);
+		pnlBtn3.setBorder(bordeGrid);
+		pnlDerTop.add(pnlBtn3);
 		
 		btnSalir = new JButton("Salir");
 		JPanel pnlBtn7 = new JPanel(new BorderLayout());
@@ -111,35 +120,71 @@ public class ClienteFTPVista extends JFrame {
 		
 		JPanel pnlDerCenter = new JPanel();
 		pnlDerecha.add(pnlDerCenter, BorderLayout.CENTER);
-		pnlDerCenter.setLayout(new GridLayout(0, 2, 0, 0));
+		pnlDerCenter.setLayout(new GridLayout(4, 1, 0, 15));
 		
-		JLabel lblServidor = new JLabel("Servidor: ");
-		lblServidor.setHorizontalAlignment(SwingConstants.TRAILING);
-		pnlDerCenter.add(lblServidor);
+		JPanel panel_2 = new JPanel();
+		pnlDerCenter.add(panel_2);
+		panel_2.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblServidor = new JLabel("Servidor FTP:");
+		lblServidor.setVerticalAlignment(SwingConstants.BOTTOM);
+		lblServidor.setFont(new Font("Tahoma", Font.BOLD, 12));
+		panel_2.add(lblServidor, BorderLayout.NORTH);
+		lblServidor.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		lblVarServer = new JLabel("");
-		pnlDerCenter.add(lblVarServer);
+		lblVarServer.setVerticalAlignment(SwingConstants.TOP);
+		lblVarServer.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		lblVarServer.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_2.add(lblVarServer);
 		
-		JLabel lblUser = new JLabel("Usuario: ");
-		lblUser.setHorizontalAlignment(SwingConstants.RIGHT);
-		pnlDerCenter.add(lblUser);
+		JPanel panel_4 = new JPanel();
+		pnlDerCenter.add(panel_4);
+		panel_4.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblUser = new JLabel("Usuario:");
+		lblUser.setVerticalAlignment(SwingConstants.BOTTOM);
+		lblUser.setFont(new Font("Tahoma", Font.BOLD, 12));
+		panel_4.add(lblUser, BorderLayout.NORTH);
+		lblUser.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		lblVarUser = new JLabel("");
-		pnlDerCenter.add(lblVarUser);
+		lblVarUser.setVerticalAlignment(SwingConstants.TOP);
+		lblVarUser.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		lblVarUser.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_4.add(lblVarUser);
 		
-		JLabel lblRaiz = new JLabel("Directorio ra\u00EDz: ");
-		lblRaiz.setHorizontalAlignment(SwingConstants.RIGHT);
-		pnlDerCenter.add(lblRaiz);
+		JPanel panel_6 = new JPanel();
+		pnlDerCenter.add(panel_6);
+		panel_6.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblRaiz = new JLabel("Directorio ra\u00EDz:");
+		lblRaiz.setVerticalAlignment(SwingConstants.BOTTOM);
+		lblRaiz.setFont(new Font("Tahoma", Font.BOLD, 12));
+		panel_6.add(lblRaiz, BorderLayout.NORTH);
+		lblRaiz.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		lblVarRaiz = new JLabel("");
-		pnlDerCenter.add(lblVarRaiz);
+		lblVarRaiz.setVerticalAlignment(SwingConstants.TOP);
+		lblVarRaiz.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		lblVarRaiz.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_6.add(lblVarRaiz);
 		
-		JLabel lblDirActual = new JLabel("Directorio actual: ");
-		lblDirActual.setHorizontalAlignment(SwingConstants.RIGHT);
-		pnlDerCenter.add(lblDirActual);
+		JPanel panel_8 = new JPanel();
+		pnlDerCenter.add(panel_8);
+		panel_8.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblDirActual = new JLabel("Directorio actual:");
+		lblDirActual.setVerticalAlignment(SwingConstants.BOTTOM);
+		lblDirActual.setFont(new Font("Tahoma", Font.BOLD, 12));
+		panel_8.add(lblDirActual, BorderLayout.NORTH);
+		lblDirActual.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		lblVarDirActual = new JLabel("");
-		pnlDerCenter.add(lblVarDirActual);
+		lblVarDirActual.setVerticalAlignment(SwingConstants.TOP);
+		lblVarDirActual.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		lblVarDirActual.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_8.add(lblVarDirActual);
 		
 		JPanel pnlDerBot = new JPanel();
 		pnlDerecha.add(pnlDerBot, BorderLayout.SOUTH);
@@ -155,6 +200,7 @@ public class ClienteFTPVista extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		pnlDerBot.add(panel_1);
+		panel_1.setLayout(new BorderLayout(0, 0));
 		
 		lblMensajeVar = new JLabel("<<\u00C1rbol de directorios construido>>");
 		lblMensajeVar.setFont(new Font("Tahoma", Font.ITALIC, 12));
@@ -163,6 +209,10 @@ public class ClienteFTPVista extends JFrame {
 
 	}
 	
+	public JButton getBtnGoBack() {
+		return btnGoBack;
+	}
+
 	public JList<String> getListaDirec() {
 		return listaDirec;
 	}

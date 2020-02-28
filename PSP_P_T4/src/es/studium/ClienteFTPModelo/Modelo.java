@@ -3,6 +3,7 @@ package es.studium.ClienteFTPModelo;
 import java.awt.Color;
 import java.awt.Font;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
@@ -11,6 +12,32 @@ import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 
 public class Modelo {
+	
+	public static String devuelveRuta(ArrayList<String> lista) {
+		String resultado = "";
+		
+		try {
+			for (String elem :lista) {
+				resultado += elem;
+			}
+		} catch (Exception e) {}
+		
+		return resultado;
+	}
+	
+	public static String subeEnRuta(ArrayList<String> lista) {
+		
+		String resultado ="";
+		
+		lista.remove(lista.size()-1);
+		lista.remove(lista.size()-1);
+		
+		for (String elem :lista) {
+			resultado += elem;
+		}
+		
+		return resultado;
+	}
 	
 	public static void llenarLista(FTPClient cliente, JList<String> listaDirec) throws IOException 
 	{
