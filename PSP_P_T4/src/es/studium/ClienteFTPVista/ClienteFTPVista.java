@@ -199,10 +199,12 @@ public class ClienteFTPVista extends JFrame {
 		lblMensaje.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new EmptyBorder(2, 2, 2, 2));
 		pnlDerBot.add(panel_1);
 		panel_1.setLayout(new BorderLayout(0, 0));
 		
 		lblMensajeVar = new JLabel("<<\u00C1rbol de directorios construido>>");
+		lblMensajeVar.setBorder(new EmptyBorder(2, 2, 2, 2));
 		lblMensajeVar.setFont(new Font("Tahoma", Font.ITALIC, 12));
 		panel_1.add(lblMensajeVar);
 		lblMensajeVar.setHorizontalAlignment(SwingConstants.CENTER);

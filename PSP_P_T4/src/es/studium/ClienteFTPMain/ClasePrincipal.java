@@ -8,8 +8,6 @@ public class ClasePrincipal {
 		// TODO Auto-generated method stub
 
 		ClienteFTPControlador cFTPc = new ClienteFTPControlador();
-		cFTPc.cFTPv.setVisible(true);
-		
+		cFTPc.cFTPv.setVisible(true);	
 	}
-
 }
